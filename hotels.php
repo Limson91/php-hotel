@@ -72,9 +72,12 @@
                                 if($key === 'parking') {
                                     if($data) echo 'YES';
                                     else echo 'NO PARK';
-                                } else echo $data;
-                                ?></td>
-                            <?php } ?>
+                                } else {
+                                    echo $data;
+                                    if($key === 'distance_to_center') echo 'km';
+                                } ?>
+                            </td>
+                        <?php } ?>
                     </tr>
                 <?php } ?>
             </tbody>
