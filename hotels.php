@@ -41,3 +41,39 @@
     ];
 
 ?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <title>Hotels</title>
+</head>
+
+<body>
+    <div class="container">
+        <table class="table">
+            <thead>
+                <tr>
+                    <?php foreach($hotels[0] as $key => $value) { ?>
+                        <th scope="col"><?php echo $key ?></th>
+                        <?php
+                        } 
+                    ?>
+                </tr>
+            </thead>
+
+            <tbody>
+                <?php foreach($hotels as $hotel) { ?>
+                    <tr>
+                        <?php foreach($hotel as $data) { ?>
+                            <td><?php echo $data ?></td>
+                            <?php } ?>
+                    </tr>
+                <?php } ?>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
