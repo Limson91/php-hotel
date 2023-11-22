@@ -57,7 +57,7 @@
             <thead>
                 <tr>
                     <?php foreach($hotels[0] as $key => $value) { ?>
-                        <th scope="col"><?php echo $key ?></th>
+                        <th class="text-center" scope="col"><?php echo $key ?></th>
                         <?php
                         } 
                     ?>
@@ -67,8 +67,13 @@
             <tbody>
                 <?php foreach($hotels as $hotel) { ?>
                     <tr>
-                        <?php foreach($hotel as $data) { ?>
-                            <td><?php echo $data ?></td>
+                        <?php foreach($hotel as $key => $data) { ?>
+                            <td class="text-center"><?php 
+                                if($key === 'parking') {
+                                    if($data) echo 'YES';
+                                    else echo 'NO PARK';
+                                } else echo $data;
+                                ?></td>
                             <?php } ?>
                     </tr>
                 <?php } ?>
